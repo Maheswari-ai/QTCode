@@ -44,8 +44,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                script {
-                sh 'Xvfb :99 & export DISPLAY=:99'
+                // Set QT_QPA_PLATFORM to offscreen to run tests without a display
+                withEnv(['QT_QPA_PLATFORM=offscreen']) {
                 sh '''
                     cd build
                     ./calculator_test
