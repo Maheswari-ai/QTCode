@@ -44,13 +44,15 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Run tests (adjust the test binary path if needed)
+                script {
+                sh 'Xvfb :99 & export DISPLAY=:99'
                 sh '''
-                    cd ${BUILD_DIR}
+                    cd build
                     ./calculator_test
                 '''
             }
-        }
+         }
+       }
 
         stage('Archive Artifacts') {
             steps {

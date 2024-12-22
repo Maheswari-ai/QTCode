@@ -1,2 +1,2 @@
-CalculatorTests 3 0.0139584
+CalculatorTests 5 0.00732493
 ---
