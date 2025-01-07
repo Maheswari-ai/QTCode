@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+dd7a50415ef0e0b12d48ce178a8cd3f3 CMakeFiles/calculator_test_autogen
+0af9c518a6cf1b7fb7c8dc3345b71370 CMakeFiles/calculatorscxml_autogen
+89f9e48711a74134929075b7ccb5cd66 moc_calculator.cpp
+979ee03fbca7a774a3ac9080a792a9d7 moc_calculator_test.cpp
+9bb0b7f7730647057c83b6841bb2f55d qrc_qmake_qml_resources.cpp

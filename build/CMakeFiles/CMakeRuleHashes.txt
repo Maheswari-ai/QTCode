@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+ae5f457fff8ceb31aa123bf4f925a09d moc_calculator.cpp
+73060765d2f22f2b8ed5f016dc2908ca moc_calculator_test.cpp
+a00c38bab533af2b2d16994ee290e772 qrc_qmake_qml_resources.cpp

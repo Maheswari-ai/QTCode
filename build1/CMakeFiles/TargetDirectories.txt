@@ -1,0 +1,11 @@
+/home/ubuntu/project/calculator/build1/CMakeFiles/calculatorscxml.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/calculator_test.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/test.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/edit_cache.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/list_install_components.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/install.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/install/local.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/install/strip.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/calculatorscxml_autogen.dir
+/home/ubuntu/project/calculator/build1/CMakeFiles/calculator_test_autogen.dir

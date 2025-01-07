@@ -1,2 +1,5 @@
+<<<<<<< HEAD
 CalculatorTests 36 0.00124742
+=======
+>>>>>>> 01c4051d6ec7e232fe0ab5b7fb97b379bd54d387
 ---
