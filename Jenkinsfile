@@ -92,5 +92,21 @@ pipeline {
                     reportDir: '.',
                     reportFiles: "${CPP_CHECK_REPORT}",
                     reportName: "Cppcheck Report"
-      
+                ])
+            }
+        }
+    }
 
+    post {
+        always {
+            // Clean up workspace after the build
+            cleanWs()
+        }
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed!'
+        }
+    }
+}
