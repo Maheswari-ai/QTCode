@@ -35,14 +35,6 @@ pipeline {
                     sh 'chmod +x build.sh'  // Ensure build.sh is executable
                     sh './build.sh'         // Run the build.sh script
                 }
-
-                // Now, run CMake and Make inside the new build directory
-                dir("${BUILD_DIR}") {
-                    sh '''
-                        cmake ..  // Configure the project with CMake
-                        make      // Build the project using make
-                    '''
-                }
             }
         }
 
