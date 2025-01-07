@@ -26,7 +26,7 @@ pipeline {
                 script {
                     sh '''
                     # Update package list and install dependencies manually
-                    sudo apt-get update
+                    apt-get update
 
                     # Install basic Qt5 packages and other necessary dependencies
                     sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential
