@@ -21,13 +21,17 @@ pipeline {
         stage('Install Dependencies') {
     steps {
         sh '''
-        # Update package list and add missing repositories
-        apt-get update && apt-get install -y software-properties-common
-        add-apt-repository ppa:ubuntu-sdk-team/ppa -y
         apt-get update
+        apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential git
 
-        # Install required packages
-        apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential qt5scxml-dev
+        # Clone and build Qt5Scxml from source
+        git clone https://code.qt.io/qt/qt5.git
+        cd qt5
+        ./init-repository --module-subset=default,-qtwebengine
+        mkdir qt5-build && cd qt5-build
+        ../configure -release -opensource -confirm-license -nomake tests -nomake examples
+        make -j$(nproc)
+        make install
         '''
     }
 }
