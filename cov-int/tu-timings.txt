@@ -1,0 +1,50 @@
+Translation unit:
+6 -> /home/ubuntu/project/calculator/calculator_test.cpp
+cov-emit invocation time (seconds): 4
+cov-translate invocation time (seconds): 5
+cov-build invocation time (seconds): 30
+Translation unit:
+2 -> /home/ubuntu/project/calculator/calculator.cpp
+cov-emit invocation time (seconds): 3
+cov-translate invocation time (seconds): 3
+cov-build invocation time (seconds): 30
+Translation unit:
+1 -> /home/ubuntu/project/calculator/build1/calculatorscxml_autogen/mocs_compilation.cpp
+cov-emit invocation time (seconds): 2
+cov-translate invocation time (seconds): 8
+cov-build invocation time (seconds): 30
+Translation unit:
+3 -> /home/ubuntu/project/calculator/calculator_logic.cpp
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 30
+Translation unit:
+4 -> /home/ubuntu/project/calculator/build1/qrc_qmake_qml_resources.cpp
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 30
+Translation unit:
+5 -> /home/ubuntu/project/calculator/build1/calculator_test_autogen/mocs_compilation.cpp
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 30
+Translation unit:
+7 -> /home/ubuntu/project/calculator/calculator_logic.cpp
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 30
+Translation unit:
+8 -> /home/ubuntu/project/calculator/build1/main.cpp (no ASTs) (failure)
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 5
+cov-build invocation time (seconds): 5
+Translation unit:
+9 -> /home/ubuntu/project/calculator/build1/calculator.cpp (no ASTs) (failure)
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 1
+Translation unit:
+10 -> /home/ubuntu/project/calculator/build1/calculator.cpp (no ASTs) (failure)
+cov-emit invocation time (seconds): 0
+cov-translate invocation time (seconds): 0
+cov-build invocation time (seconds): 1

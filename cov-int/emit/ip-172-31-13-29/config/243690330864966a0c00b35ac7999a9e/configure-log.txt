@@ -1,0 +1,5 @@
+Native Compiler invocation: /usr/bin/c++ -dM -E -c /usr/local/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_QML_LIB -DQT_SCXML_LIB -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtQml -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtScxml -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include
+Working directory: /home/ubuntu/project/calculator/build1/calculatorscxml_autogen
+Comptype: g++
+* Configuring /usr/bin/c++ as a C++ compiler
+* Configuring /usr/bin/c++ as a C compiler

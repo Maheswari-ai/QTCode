@@ -1,0 +1,5 @@
+Native Compiler invocation: /usr/bin/g++ main.cpp -o main
+Working directory: /home/ubuntu/project/calculator/build1
+Comptype: g++
+* Configuring /usr/bin/g++ as a C++ compiler
+* Configuring /usr/bin/g++ as a C compiler

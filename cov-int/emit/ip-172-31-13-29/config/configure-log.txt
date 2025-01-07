@@ -1,0 +1,20 @@
+Encountered compiler invocation for first time, configuring it: /usr/bin/x86_64-linux-gnu-g++-13
+[STATUS] Using comptype g++
+Added template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/243690330864966a0c00b35ac7999a9e/coverity_config.xml
+Encountered compiler invocation for first time, configuring it: /usr/bin/x86_64-linux-gnu-g++-13 -fPIC
+[STATUS] Using comptype g++
+Added template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/243690330864966a0c00b35ac7999a9e/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/243690330864966a0c00b35ac7999a9e/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/293ccc77ba050d51c172edddf3270497/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/243690330864966a0c00b35ac7999a9e/coverity_config.xml
+Encountered compiler invocation for first time, configuring it: /usr/bin/x86_64-linux-gnu-g++-13
+[STATUS] Using comptype g++
+Added template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/231653c1da204d6bcce1767fed69d73a/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/231653c1da204d6bcce1767fed69d73a/coverity_config.xml
+Using cached template compiler configuration instance /home/ubuntu/project/calculator/build1/cov-int/emit/ip-172-31-13-29/config/231653c1da204d6bcce1767fed69d73a/coverity_config.xml

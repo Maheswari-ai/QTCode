@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coverity SYSTEM "config.dtd">
+<coverity>
+
+<metrics>
+    <metric>
+        <name>time</name>
+        <value>1</value>
+    </metric>
+    <metric>
+        <name>args</name>
+        <value>cov-build --dir cov-int make</value>
+    </metric>
+    <metric>
+        <name>host</name>
+        <value>ip-172-31-13-29</value>
+    </metric>
+    <metric>
+        <name>short-platform</name>
+        <value>linux64</value>
+    </metric>
+    <metric>
+        <name>platform</name>
+        <value>Linux 6.8.0-1021-aws x86_64</value>
+    </metric>
+    <metric>
+        <name>ident</name>
+        <value>2023.12.2 (build 78329b8295 p-2023.12-push-50)</value>
+    </metric>
+    <metric>
+        <name>user</name>
+        <value>ubuntu</value>
+    </metric>
+    <metric>
+        <name>cwd</name>
+        <value>/home/ubuntu/project/calculator/build1</value>
+    </metric>
+    <metric>
+        <name>config</name>
+        <value>/home/ubuntu/project/calculator/cov-analysis-linux64-2023.12.2/config/coverity_config.xml</value>
+    </metric>
+    <metric>
+        <name>intermediatedir</name>
+        <value>/home/ubuntu/project/calculator/build1/cov-int</value>
+    </metric>
+    <metric>
+        <name>outputdir</name>
+        <value>/home/ubuntu/project/calculator/build1/cov-int/output</value>
+    </metric>
+    <metric>
+        <name>emitdir</name>
+        <value>/home/ubuntu/project/calculator/build1/cov-int/emit</value>
+    </metric>
+    <metric>
+        <name>force</name>
+        <value>no</value>
+    </metric>
+    <metric>
+        <name>cygwin</name>
+        <value>no</value>
+    </metric>
+    <metric>
+        <name>failures</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>successes</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>recoverable-errors</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>dotnet-webapps-detected</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>dotnet-webapp-successes</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>dotnet-webapp-compilation-secs</name>
+        <value>0</value>
+    </metric>
+    <metric>
+        <name>security-da-ms</name>
+        <value>138</value>
+    </metric>
+    <metric>
+        <name>buildcmd</name>
+        <value>make</value>
+    </metric>
+</metrics>
+</coverity>

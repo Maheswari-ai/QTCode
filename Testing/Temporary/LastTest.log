@@ -1,0 +1,28 @@
+Start testing: Jan 07 09:27 UTC
+----------------------------------------------------------
+1/1 Testing: CalculatorTests
+1/1 Test: CalculatorTests
+Command: "/home/ubuntu/project/calculator/build1/calculator_test"
+Directory: /home/ubuntu/project/calculator/build1
+"CalculatorTests" start time: Jan 07 09:27 UTC
+Output:
+----------------------------------------------------------
+********* Start testing of CalculatorTest *********
+Config: Using QtTest library 5.15.13, Qt 5.15.13 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 13.2.0), ubuntu 24.04
+QDEBUG : CalculatorTest::initTestCase() Starting Calculator Tests...
+PASS   : CalculatorTest::initTestCase()
+PASS   : CalculatorTest::testAddition()
+PASS   : CalculatorTest::testSubtraction()
+QDEBUG : CalculatorTest::cleanupTestCase() All tests finished.
+PASS   : CalculatorTest::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
+********* Finished testing of CalculatorTest *********
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"CalculatorTests" end time: Jan 07 09:27 UTC
+"CalculatorTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 07 09:27 UTC
