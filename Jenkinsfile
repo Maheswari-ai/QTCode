@@ -19,15 +19,18 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-            steps {
-                sh '''
-                # Update package list and install dependencies
-                apt-get update && apt-get install -y \
-                    qtbase5-dev qtchooser qt5-qmake cmake build-essential qt5scxml-dev
-                '''
-            }
-        }
+    steps {
+        sh '''
+        # Update package list and add missing repositories
+        apt-get update && apt-get install -y software-properties-common
+        add-apt-repository ppa:ubuntu-sdk-team/ppa -y
+        apt-get update
 
+        # Install required packages
+        apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential qt5scxml-dev
+        '''
+    }
+}
         stage('Build') {
             steps {
                 script {
