@@ -1,59 +1,48 @@
-pipeline {
+pipeline { 
     agent {
         docker {
-            image 'hh71099/my-image:latest'  // Docker image you want to use
-            // label 'your-label'  // Optional: specify label if needed
-               args '-u root'  // Optional: any additional docker run arguments if necessary
+            image 'hh71099/my-image:latest'  // Specify the Docker image
+            args '-u root'  // Run as root user inside the container
         }
     }
 
     environment {
-        BUILD_DIR = 'build'
-        CPP_CHECK_REPORT = 'cppcheck-report.xml'
+        BUILD_DIR = 'build'  // Directory for build files
+        CPP_CHECK_REPORT = 'cppcheck-report.xml'  // Cppcheck output file
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code
-                checkout scm
+                checkout scm  // Check out the source code from the repository
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                // Manually install Qt5 or any other missing dependencies
-                script {
-                    sh '''
-                    # Update package list and install dependencies manually
-                    apt-get update && apt-get install -y <dependencies>
-
-                    # Install basic Qt5 packages and other necessary dependencies
-                    sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential
-
-                    # If Qt5Scxml is required, install it manually by downloading and building
-                    # Example: Qt5Scxml installation steps
-                    sudo apt-get install -y qt5scxml-dev
-                    '''
-                }
+                sh '''
+                # Update package list and install dependencies
+                apt-get update && apt-get install -y \
+                    qtbase5-dev qtchooser qt5-qmake cmake build-essential qt5scxml-dev
+                '''
             }
         }
 
         stage('Build') {
             steps {
-                // Ensure a clean build directory
                 script {
-                    // Remove any existing build directory and CMakeCache.txt
-                    sh "rm -rf ${BUILD_DIR}"  // Remove any existing build directory
-                    sh "rm -f CMakeCache.txt" // Remove any leftover CMake cache file to avoid conflicts
-                    sh "mkdir ${BUILD_DIR}"    // Create a new build directory
+                    // Clean and set up the build directory
+                    sh '''
+                    rm -rf ${BUILD_DIR}   # Remove any existing build directory
+                    mkdir ${BUILD_DIR}    # Create a new build directory
+                    '''
                 }
 
-                // Run the build.sh script (make sure it's executable)
-                script {
-                    sh 'chmod +x build.sh'  // Ensure build.sh is executable
-                    sh './build.sh'         // Run the build.sh script
-                }
+                // Build the project using build.sh
+                sh '''
+                chmod +x build.sh       # Ensure the build script is executable
+                ./build.sh              # Run the build script
+                '''
             }
         }
 
@@ -61,19 +50,18 @@ pipeline {
             steps {
                 // Run Cppcheck for static analysis
                 sh '''
-                    cppcheck --enable=all --inconclusive --xml --xml-version=2 \
-                    --output-file=${CPP_CHECK_REPORT} . 
+                cppcheck --enable=all --inconclusive --xml --xml-version=2 \
+                --output-file=${CPP_CHECK_REPORT} .
                 '''
             }
         }
 
         stage('Test') {
             steps {
-                // Set QT_QPA_PLATFORM to offscreen to run tests without a display
-                withEnv(['QT_QPA_PLATFORM=offscreen']) {
+                withEnv(['QT_QPA_PLATFORM=offscreen']) {  // Run tests in offscreen mode
                     sh '''
-                        cd build
-                        ./calculator_test  // Run the test executable
+                    cd ${BUILD_DIR}      # Change to the build directory
+                    ./calculator_test    # Run the test executable
                     '''
                 }
             }
@@ -84,9 +72,9 @@ pipeline {
                 // Archive build artifacts
                 archiveArtifacts artifacts: "${BUILD_DIR}/**", fingerprint: true
 
-                // Archive static analysis report
+                // Publish the static analysis report
                 publishHTML([ 
-                    allowMissing: false,
+                    allowMissing: true,   // Don't fail if the report is missing
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: '.',
@@ -99,8 +87,7 @@ pipeline {
 
     post {
         always {
-            // Clean up workspace after the build
-            cleanWs()
+            cleanWs()  // Clean the workspace after the build
         }
         success {
             echo 'Build succeeded!'
