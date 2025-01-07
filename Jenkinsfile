@@ -1,4 +1,4 @@
-pipeline { 
+pipeline {
     agent {
         docker {
             image 'hh71099/my-image:latest'  // Specify the Docker image
@@ -9,6 +9,7 @@ pipeline {
     environment {
         BUILD_DIR = 'build'  // Directory for build files
         CPP_CHECK_REPORT = 'cppcheck-report.xml'  // Cppcheck output file
+        REPO_URL = 'https://code.qt.io/qt/qt5.git'  // Qt5 repository URL
     }
 
     stages {
@@ -19,22 +20,29 @@ pipeline {
         }
 
         stage('Install Dependencies') {
-    steps {
-        sh '''
-        apt-get update
-        apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential git
+            steps {
+                sh '''
+                apt-get update
+                apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential git
 
-        # Clone and build Qt5Scxml from source
-        git clone https://code.qt.io/qt/qt5.git
-        cd qt5
-        ./init-repository --module-subset=default,-qtwebengine
-        mkdir qt5-build && cd qt5-build
-        ../configure -release -opensource -confirm-license -nomake tests -nomake examples
-        make -j$(nproc)
-        make install
-        '''
-    }
-}
+                # Clone and build Qt5 from source
+                if [ ! -d "qt5" ]; then
+                    git clone ${REPO_URL} qt5
+                fi
+
+                cd qt5
+                # Ensure remote URL is set if missing
+                git remote add origin ${REPO_URL} || true
+                ./init-repository --module-subset=default,-qtwebengine
+                
+                mkdir qt5-build && cd qt5-build
+                ../configure -release -opensource -confirm-license -nomake tests -nomake examples
+                make -j$(nproc)
+                make install
+                '''
+            }
+        }
+
         stage('Build') {
             steps {
                 script {
@@ -58,7 +66,7 @@ pipeline {
                 // Run Cppcheck for static analysis
                 sh '''
                 cppcheck --enable=all --inconclusive --xml --xml-version=2 \
-                --output-file=${CPP_CHECK_REPORT} .
+                --output-file=${CPP_CHECK_REPORT} . 
                 '''
             }
         }
