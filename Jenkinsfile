@@ -3,7 +3,7 @@ pipeline {
         docker {
             image 'hh71099/my-image:latest'  // Docker image you want to use
             // label 'your-label'  // Optional: specify label if needed
-            // args '-u 18003:3558'  // Optional: any additional docker run arguments if necessary
+               args '-u root'  // Optional: any additional docker run arguments if necessary
         }
     }
 
@@ -26,7 +26,7 @@ pipeline {
                 script {
                     sh '''
                     # Update package list and install dependencies manually
-                    apt-get update
+                    apt-get update && apt-get install -y <dependencies>
 
                     # Install basic Qt5 packages and other necessary dependencies
                     sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential
