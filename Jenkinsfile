@@ -20,6 +20,25 @@ pipeline {
             }
         }
 
+        stage('Install Dependencies') {
+            steps {
+                // Manually install Qt5 or any other missing dependencies
+                script {
+                    sh '''
+                    # Update package list and install dependencies manually
+                    sudo apt-get update
+
+                    # Install basic Qt5 packages and other necessary dependencies
+                    sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake cmake build-essential
+
+                    # If Qt5Scxml is required, install it manually by downloading and building
+                    # Example: Qt5Scxml installation steps
+                    sudo apt-get install -y qt5scxml-dev
+                    '''
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 // Ensure a clean build directory
@@ -43,7 +62,7 @@ pipeline {
                 // Run Cppcheck for static analysis
                 sh '''
                     cppcheck --enable=all --inconclusive --xml --xml-version=2 \
-                    --output-file=${CPP_CHECK_REPORT} .
+                    --output-file=${CPP_CHECK_REPORT} . 
                 '''
             }
         }
@@ -73,21 +92,5 @@ pipeline {
                     reportDir: '.',
                     reportFiles: "${CPP_CHECK_REPORT}",
                     reportName: "Cppcheck Report"
-                ])
-            }
-        }
-    }
+      
 
-    post {
-        always {
-            // Clean up workspace after the build
-            cleanWs()
-        }
-        success {
-            echo 'Build succeeded!'
-        }
-        failure {
-            echo 'Build failed!'
-        }
-    }
-}
